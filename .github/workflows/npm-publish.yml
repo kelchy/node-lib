@@ -22,7 +22,7 @@ jobs:
         tag_name: "mongo/v%s"
         tag_message: "mongo/v%s"
         create_tag: "true"
-        commit_pattern: "^Release (\\S+)"
+        commit_pattern: "^Release mongo (\\S+)"
         workspace: "./lib/mongo"
         publish_command: "npm"
         publish_args: "--workspace @kelchy/mongo"
