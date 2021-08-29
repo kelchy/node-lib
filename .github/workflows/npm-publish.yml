@@ -16,6 +16,7 @@ jobs:
         node-version: "16.x"
     - run: npm ci --workspace @kelchy/mongo --include-dev
     - run: npm run --workspace @kelchy/mongo test:unit
+    - run: npm config set _auth ${{ secrets.NPM_AUTH_TOKEN }}
     - name: Publish if version has been updated
       uses: pascalgn/npm-publish-action@1.3.8
       with:
