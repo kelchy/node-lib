@@ -14,6 +14,8 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: "16.x"
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
     - run: npm ci --workspace @kelchy/mongo --include-dev
     - run: npm run --workspace @kelchy/mongo test:unit
     - name: Publish if version has been updated
