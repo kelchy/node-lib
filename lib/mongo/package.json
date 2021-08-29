@@ -1,6 +1,6 @@
 {
   "name": "@kelchy/mongo",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "scripts": {
     "test:unit": "jest tests",
     "lint": "eslint ."
@@ -26,6 +26,8 @@
   "main": "./index.js",
   "license": "GPLv3",
   "dependencies": {
+    "@kelchy/common": "^1.0.0",
+    "@kelchy/log": "^1.0.0",
     "mongodb": "^4.1.1"
   },
   "devDependencies": {
