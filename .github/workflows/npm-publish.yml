@@ -27,8 +27,6 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: '16.x'
-      env:
-        NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
 
     - name: Install dependencies
       if: steps.check.outputs.changed == 'true'
@@ -41,6 +39,8 @@ jobs:
     - name: Publish
       if: steps.check.outputs.changed == 'true'
       run: npm publish --workspace @kelchy/mongo --access public
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
 
     - name: Create a GitHub release
       if: steps.check.outputs.changed == 'true'
