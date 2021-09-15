@@ -25,6 +25,7 @@
     }
   },
   "main": "./index.js",
+  "license": "GPLv3",
   "dependencies": {
     "md5": "^2.3.0"
   },

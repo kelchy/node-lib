@@ -1,6 +1,6 @@
 {
   "name": "@kelchy/redis",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "scripts": {
     "test:unit": "jest tests",
     "test": "mocha -u tdd",
@@ -25,6 +25,7 @@
     }
   },
   "main": "./index.js",
+  "license": "GPLv3",
   "dependencies": {
     "ioredis": "^4.27.7"
   },

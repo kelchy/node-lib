@@ -25,6 +25,7 @@
     }
   },
   "main": "./index.js",
+  "license": "GPLv3",
   "dependencies": {
     "@kelchy/common": "^1.0.0",
     "amqp-connection-manager": "^3.2.2",
