@@ -25,6 +25,7 @@
     }
   },
   "main": "./index.js",
+  "license": "GPLv3",
   "dependencies": {
     "@kelchy/common": "^1.0.0",
     "google-auth-library": "^7.4.1",
