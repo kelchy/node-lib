@@ -1,6 +1,6 @@
 {
   "name": "@kelchy/aws",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "scripts": {
     "test:unit": "jest tests",
     "test": "mocha -u tdd",
@@ -28,6 +28,7 @@
   "license": "GPLv3",
   "dependencies": {
     "@kelchy/common": "^1.0.0",
+    "@kelchy/log": "^1.0.1",
     "aws-sdk": "^2.827.0"
   },
   "devDependencies": {
