@@ -1,6 +1,6 @@
 {
   "name": "@kelchy/redis",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "scripts": {
     "test:unit": "jest tests",
     "test": "mocha -u tdd",
