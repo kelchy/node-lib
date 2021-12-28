@@ -1,6 +1,6 @@
 {
   "name": "@kelchy/log",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "scripts": {
     "test:unit": "jest tests",
     "test": "mocha -u tdd",
@@ -25,17 +25,19 @@
     }
   },
   "main": "./index.js",
+  "license": "GPLv3",
   "dependencies": {
     "@kelchy/common": "^1.0.0",
+    "request": "^2.88.2",
     "request-promise": "^4.2.2"
   },
   "devDependencies": {
+    "@kelchy/pre-commit": "^1.2.4",
     "eslint": "^7.24.0",
     "eslint-config-standard": "^16.0.2",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.3.1",
-    "jest": "^26.6.3",
-    "@kelchy/pre-commit": "^1.2.4"
+    "jest": "^26.6.3"
   }
 }
