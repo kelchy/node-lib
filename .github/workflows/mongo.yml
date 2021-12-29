@@ -2,8 +2,7 @@ name: npm-publish-mongo
 on:
   push:
     branches:
-      - mongo/0.1
-      - mongo/1.1
+      - mongo/*
 jobs:
   npm-publish:
     name: npm-publish-mongo
