@@ -32,6 +32,7 @@ none
   - getSafeValueFromNestedObject(arg, arr) - safely retrieve values from nested object
   - jsonSafe(arg) - function to parse a json string (JSON.parse) safely
   - error(scope, err) - handle error bubbling, concatenating current scope into the message
+  - random(digits, options) - generates cryptographically secure random digits with min/max options
 
 ## host.js
 - Host level wrappers
