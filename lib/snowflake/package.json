@@ -1,6 +1,6 @@
 {
     "name": "@kelchy/snowflake",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "scripts": {
         "test:unit": "jest tests",
         "lint": "eslint ."

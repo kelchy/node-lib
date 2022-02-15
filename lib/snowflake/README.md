@@ -8,19 +8,20 @@ const Log = require('@kelchy/log')
 const { awaitWrap } = require('@kelchy/common')
 
 // Initialise log
+
 const log = new Log.Standard({})
+
+// Initialise snowflake connection URI
+
+const SNOWFLAKE_URI = 'snowflake://<username>:<password>@<account>.snowflakecomputing.com/?role=<role>&warehouse=<warehouse>&database=<database>&schema=<schema>'
 
 // Connect to snowflake
 // Success should log: {"scope":"connect db","msg":"Successfully connected to Snowflake","ts":"2021-12-21T10:30:55.183Z"}
-const snowflake = new Snowflake({
-    account: '<account>>',
-    username: '<username>',
-    password: '<password>',
-    role: '<role>',
-    database: '<database>',
-    schema: '<schema>',
-    warehouse: '<warehouse>'
-  }, { log })
+
+const snowflake = new Snowflake(SNOWFLAKE_URI, {
+    log, // optional log option
+    clientSessionKeepAlive: true // optional snowflake conn option
+})
 
 ```
 
