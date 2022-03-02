@@ -1,6 +1,6 @@
 {
   "name": "@kelchy/common",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "scripts": {
     "test:unit": "jest tests",
     "test": "mocha -u tdd",
