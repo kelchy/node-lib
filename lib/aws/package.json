@@ -1,6 +1,6 @@
 {
   "name": "@kelchy/aws",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "scripts": {
     "test:unit": "jest tests",
     "test": "mocha -u tdd",
