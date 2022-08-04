@@ -12,6 +12,10 @@ ioredis
 const Redis = require('@kelchy/redis')
 const redis = new Redis(process.env.REDIS_URI)
 ```
+- Basic Initialization - custom client option, cluster support disabled i.e. redis labs
+```
+const redis = new Redis(process.env.REDIS_URI, { cluster: false })
+```
 - Custom client options - cluster support for AWS elasticache turned off
 ```
 const redisOptions = Redis.clientOptions()

@@ -21,6 +21,8 @@ const Aws = require('@kelchy/aws')
 ```
 
 # DEVELOPMENT: How to include in package.json (warning, this will build all dependencies)
+# i.e. if a developer wants to make temporary changes to the modules common, log, redis and aws on local machine while experimenting on the application
+# this method will not use the published packages from npm but instead use local copies
 ```
   "dependencies": {
     "node-lib": "github:kelchy/node-lib#main",
