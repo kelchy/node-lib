@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - auth/1.0
+      - auth/1.1
 jobs:
   npm-publish:
     name: npm-publish-auth
@@ -30,6 +31,9 @@ jobs:
         always-auth: true
         registry-url: https://registry.npmjs.org
         cache: npm
+
+    - name: Install dependencies
+      if: steps.check.outputs.changed == 'true'
       run: npm ci --workspace @kelchy/auth --include-dev
 
     - name: Test

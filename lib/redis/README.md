@@ -12,19 +12,23 @@ ioredis
 const Redis = require('@kelchy/redis')
 const redis = new Redis(process.env.REDIS_URI)
 ```
+- Basic Initialization - custom client option, cluster support disabled i.e. redis labs
+```
+const redis = new Redis(process.env.REDIS_URI, { cluster: false })
+```
 - Custom client options - cluster support for AWS elasticache turned off
 ```
-const options = Redis.clientOptions()
-const redis = new Redis(process.env.REDIS_URI, options)
+const redisOptions = Redis.clientOptions()
+const redis = new Redis(process.env.REDIS_URI, { redisOptions })
 ```
 - Use pubsub 
 ```
-const redis = new Redis(process.env.REDIS_URI, null, { pubsub: true })
+const redis = new Redis(process.env.REDIS_URI, { pubsub: true })
 ```
 - Turn internal logging on
 ```
 const Log = require('@kelchy/log')
-const redis = new Redis(process.env.REDIS_URI, Redis.clientOptions(true), { log: new Log.Standard() })
+const redis = new Redis(process.env.REDIS_URI, { redisOptions: Redis.clientOptions('password'), log: new Log.Standard() })
 ```
 
 - supported methods
@@ -53,6 +57,6 @@ smembers(key)
 subscribe(chan)
 publish(chan, msg)
 
-clientOptions(cluster) - returns client options which can be used during initialization - 'cluster' is boolean
+clientOptions(password) - returns client options which can be used during initialization - 'password' is string
 result(value) - retrieves the last result from a write operation result - 'value'
 ```
