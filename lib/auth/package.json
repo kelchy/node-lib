@@ -1,6 +1,6 @@
 {
   "name": "@kelchy/auth",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "scripts": {
     "test:unit": "jest tests",
     "test": "mocha -u tdd",
@@ -28,6 +28,7 @@
   "license": "GPLv3",
   "dependencies": {
     "@kelchy/common": "^1.0.0",
+    "@kelchy/log": "^1.1.1",
     "axios": "^0.27.2",
     "google-auth-library": "^7.4.1",
     "tough-cookie": "^4.0.0"
