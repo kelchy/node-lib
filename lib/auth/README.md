@@ -6,7 +6,7 @@
 ```
 tough-cookie
 google-auth-library
-request-promise
+axios
 ```
 
 - Basic Initialization - freeipa or google client
