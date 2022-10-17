@@ -1,0 +1,56 @@
+name: npm-publish-sms
+on:
+  push:
+    branches:
+      - sms/1.0
+jobs:
+  npm-publish:
+    name: npm-publish-sms
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Check version changes
+      uses: EndBug/version-check@v1
+      id: check
+      with:
+        file-name: ./lib/sms/package.json
+
+    - name: Version update detected
+      if: steps.check.outputs.changed == 'true'
+      run: 'echo "Version change found! New version: ${{ steps.check.outputs.version }} (${{ steps.check.outputs.type }})"'
+
+    - name: Setup node
+      if: steps.check.outputs.changed == 'true'
+      uses: actions/setup-node@v2
+      with:
+        node-version: 16.x
+        always-auth: true
+        registry-url: https://registry.npmjs.org
+        cache: npm
+
+    - name: Install dependencies
+      if: steps.check.outputs.changed == 'true'
+      run: npm ci --workspace @kelchy/sms --include-dev
+
+    - name: Test
+      if: steps.check.outputs.changed == 'true'
+      run: npm run --workspace @kelchy/sms test:unit
+
+    - name: Publish
+      if: steps.check.outputs.changed == 'true'
+      run: npm publish --workspace @kelchy/sms --access public
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+
+    - name: Create a GitHub release
+      if: steps.check.outputs.changed == 'true'
+      uses: actions/create-release@v1
+      with:
+        tag_name: sms/v${{ steps.check.outputs.version }}
+        release_name: Release sms/v${{ steps.check.outputs.version }}
+        body: 'Release: sms/v${{ steps.check.outputs.version }}\nType: ${{ steps.check.outputs.type }}\nCommit: ${{ steps.check.outputs.commit }}'
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
