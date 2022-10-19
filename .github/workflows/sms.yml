@@ -1,12 +1,11 @@
-name: npm-publish-auth
+name: npm-publish-sms
 on:
   push:
     branches:
-      - auth/1.0
-      - auth/1.1
+      - sms/1.0
 jobs:
   npm-publish:
-    name: npm-publish-auth
+    name: npm-publish-sms
     runs-on: ubuntu-latest
 
     steps:
@@ -17,7 +16,7 @@ jobs:
       uses: EndBug/version-check@v1
       id: check
       with:
-        file-name: ./lib/auth/package.json
+        file-name: ./lib/sms/package.json
 
     - name: Version update detected
       if: steps.check.outputs.changed == 'true'
@@ -34,15 +33,15 @@ jobs:
 
     - name: Install dependencies
       if: steps.check.outputs.changed == 'true'
-      run: npm ci --workspace @kelchy/auth --include-dev
+      run: npm ci --workspace @kelchy/sms --include-dev
 
     - name: Test
       if: steps.check.outputs.changed == 'true'
-      run: npm run --workspace @kelchy/auth test:unit
+      run: npm run --workspace @kelchy/sms test:unit
 
     - name: Publish
       if: steps.check.outputs.changed == 'true'
-      run: npm publish --workspace @kelchy/auth --access public
+      run: npm publish --workspace @kelchy/sms --access public
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
 
@@ -50,8 +49,8 @@ jobs:
       if: steps.check.outputs.changed == 'true'
       uses: actions/create-release@v1
       with:
-        tag_name: auth/v${{ steps.check.outputs.version }}
-        release_name: Release auth/v${{ steps.check.outputs.version }}
-        body: 'Release: auth/v${{ steps.check.outputs.version }}\nType: ${{ steps.check.outputs.type }}\nCommit: ${{ steps.check.outputs.commit }}'
+        tag_name: sms/v${{ steps.check.outputs.version }}
+        release_name: Release sms/v${{ steps.check.outputs.version }}
+        body: 'Release: sms/v${{ steps.check.outputs.version }}\nType: ${{ steps.check.outputs.type }}\nCommit: ${{ steps.check.outputs.commit }}'
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
