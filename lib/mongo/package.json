@@ -1,6 +1,6 @@
 {
   "name": "@kelchy/mongo",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "scripts": {
     "test:unit": "jest tests",
     "lint": "eslint ."
