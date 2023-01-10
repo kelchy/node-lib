@@ -1,6 +1,6 @@
 {
   "name": "@kelchy/http-client",
-  "version": "0.1.5",
+  "version": "0.1.7",
   "scripts": {
     "test:unit": "jest test",
     "lint": "eslint ."
