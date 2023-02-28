@@ -1,6 +1,6 @@
 {
   "name": "@kelchy/http-server",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "scripts": {
     "test:unit": "jest test",
     "lint": "eslint ."

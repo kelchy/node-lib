@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - http/server/0.0
+      - http/server/0.2
 jobs:
   npm-publish:
     name: npm-publish-http-server
