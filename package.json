@@ -1,6 +1,6 @@
 {
   "name": "@kelchy/node-lib",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "private": true,
   "scripts": {
     "test:unit": "jest lib",
