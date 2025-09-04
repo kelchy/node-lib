@@ -1,6 +1,6 @@
 {
   "name": "@kelchy/http-client",
-  "version": "0.1.7",
+  "version": "0.1.9",
   "scripts": {
     "test:unit": "jest test",
     "lint": "eslint ."
@@ -28,7 +28,7 @@
   "dependencies": {
     "@kelchy/common": "^1.0.1",
     "@kelchy/log": "^1.1.4",
-    "axios": "^1.2.2"
+    "axios": "^1.6.0"
   },
   "devDependencies": {
     "@kelchy/pre-commit": "^1.2.4",

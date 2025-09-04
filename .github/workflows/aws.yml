@@ -2,7 +2,7 @@ name: npm-publish-aws
 on:
   push:
     branches:
-      - aws/1.0
+      - aws/*
 jobs:
   npm-publish:
     name: npm-publish-aws
